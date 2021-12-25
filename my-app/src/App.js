@@ -1,5 +1,9 @@
 import SocialNetworkUser from './components/socialNetworkUser';
-import dataSocialUser from './dataSocialNetworkUser.json';
+import dataSocialUser from './user.json';
+import FriendList from './components/FriendList';
+import friendsData from './friends.json';
+// import Statistics from './components/Statistics';
+// import data from './data.json';
 
 export default function App() {
   return (
@@ -11,6 +15,19 @@ export default function App() {
       location={dataSocialUser.location} 
       followers={dataSocialUser.stats.followers} 
       views={dataSocialUser.stats.views} 
-      likes={dataSocialUser.stats.likes} />
+      likes={dataSocialUser.stats.likes} 
+    />
+    <FriendList items={friendsData} />
   </div>
   )};
+
+// export default function AppStatistics() {
+//   return (
+//     <div>
+//     <Statistics
+//       id={data.id}
+//       labal={data.labal}
+//       percentage={data.percentage} />
+//   </div>
+//   )
+// }

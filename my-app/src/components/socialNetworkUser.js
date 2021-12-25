@@ -1,14 +1,15 @@
 import PropTypes from "prop-types";
 
 export default function SocialNetworkUser(props) {
-    const { src, username, tag, location, followers, views, likes} = props;
+    const { src, username, tag, location, followers, views, likes } = props;
     return (
     <div className="profile">
     <div className="description">
       <img
         src={src}
-        alt="User avatar"
+        alt="User avatar" 
         className="avatar"
+        width="300"
       />
       <p className="name">{username}</p>
       <p className="tag">{tag}</p>

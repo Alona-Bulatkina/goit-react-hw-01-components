@@ -1,37 +1,26 @@
 import PropTypes from "prop-types";
-
-const data = [
-    { "id": "id-1", "label": ".docx", "percentage": 22 },
-    { "id": "id-2", "label": ".pdf", "percentage": 4 },
-    { "id": "id-3", "label": ".mp3", "percentage": 17 },
-    { "id": "id-4", "label": ".psd", "percentage": 47 },
-    { "id": "id-5", "label": ".pdf", "percentage": 10 }
-]
+import data from '../data.json';
+import App from "../App";
 
 export default function Statistics(props) {
-    return (
+    const { labal, percentage } = props;
+  return (
         <section className="statistics">
   <h2 className="title">Upload stats</h2>
 
   <ul className="stat-list">
+    {data.map(datas => (
     <li className="item">
-      <span className="label">{data.labal}</span>
-      <span className="percentage">{data.percentage}</span>
-    </li>
-    <li className="item">
-      <span className="label">{data.labal}</span>
-      <span className="percentage">{data.percentage}</span>
-    </li>
-    <li className="item">
-      <span className="label">{data.labal}</span>
-      <span className="percentage">{data.percentage}</span>
-    </li>
-    <li className="item">
-      <span className="label">{data.labal}</span>
-      <span className="percentage">{data.percentage}</span>
-    </li>
+      <span className="label">{datas.labal}</span>
+      <span className="percentage">{datas.percentage}</span>
+    </li>))}
   </ul>
 </section>
     )};
 
-    ReactDOM.render(Statistics, document.querySelector('#root'));
+    Statistics.propTypes = {
+      labal: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }
+{/* <Statistics key={datas.id} labal={datas.label} percentage={datas.percentage} /> */}
+    // ReactDOM.render(<App />, document.querySelector('#root'));

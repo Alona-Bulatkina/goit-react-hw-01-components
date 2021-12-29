@@ -1,12 +1,11 @@
 import FriendListItem from "./FriendListItem";
-import friendsData from '../friends.json'; 
 import PropTypes from 'prop-types';
 
 function FriendList({ items }) {
     return (
     <ul>
         
-            <li key={items.name}>
+            <li key={items.id}>
                 <FriendListItem avatar={items.avatar} 
                 name={items.name} 
                 status={items.isOnline} />

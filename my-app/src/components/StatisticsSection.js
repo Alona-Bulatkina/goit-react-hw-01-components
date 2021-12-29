@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-export default function StatisticsSection({ title, stats }) {
+export default function StatisticsSection({ title, children }) {
     return (
         <section>
             {title && <h2>{title}</h2>} 
-            {stats}
+            {children}
         </section>
         );
 }

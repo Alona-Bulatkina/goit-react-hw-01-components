@@ -1,37 +1,37 @@
 import PropTypes from "prop-types";
-import { Container } from '../socialNetworkUser.styled';
-// import { UserName } from '../socialNetworkUser.styled';
+import { Container, UserName, Image, Description, Stats, StatsLi, StatsQuantity } from '../socialNetworkUser.styled';
+
 
 export default function SocialNetworkUser(props) {
     const { src, username, tag, location, followers, views, likes } = props;
     return (
 <Container>
-      <div className="description">
-        <img
+      <div>
+        <Image
           src={src}
           alt="User avatar" 
           className="avatar"
-          width="100"
+          width="150"
         />
-          <p>{username}</p>
-          <p className="tag">{tag}</p>
-          <p className="location">{location}</p>
+          <UserName>{username}</UserName>
+          <Description>{tag}</Description>
+          <Description>{location}</Description>
       </div>
   
-      <ul className="stats">
-        <li>
-          <span className="label">Followers: {followers}</span>
-          <span className="quantity">1000</span>
-        </li>
-        <li>
-          <span className="label">Views: {views}</span>
-          <span className="quantity">2000</span>
-        </li>
-        <li>
-          <span className="label">Likes: {likes}</span>
-          <span className="quantity">3000</span>
-        </li>
-      </ul>
+      <Stats>
+        <StatsLi>
+          <span className="label">Followers: </span>
+          <StatsQuantity>{followers}</StatsQuantity>
+        </StatsLi>
+        <StatsLi>
+          <span className="label">Views: </span>
+          <StatsQuantity>{views}</StatsQuantity>
+        </StatsLi>
+        <StatsLi>
+          <span className="label">Likes: </span>
+          <StatsQuantity>{likes}</StatsQuantity>
+        </StatsLi>
+      </Stats>
   </Container>
     )};
 

@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 
 export default function StaticticsList ({ items }) {
 return (<ul>
-        <li key={items.id}>
         <Statistics
         labal={items.label} 
         percentage={items.percentage} />
-      </li>
-</ul>
+      </ul>
 )}
 
 StaticticsList.propTypes = {

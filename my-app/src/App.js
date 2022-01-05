@@ -2,12 +2,10 @@ import SocialNetworkUser from './components/socialNetworkUser';
 import dataSocialUser from './user.json';
 import FriendList from './components/FriendList';
 import friendsData from './friends.json';
-
 import StaticticsList from './components/StaticticsList';
 import StatisticsSection from './components/StatisticsSection';
 import data from './data.json';
-import TransactionHistorySection from './components/TransactionHistorySection';
-import TransactionHistoryList from './components/TransactionHistoryList';
+import TransactionHistory from './components/TransactionHistory';
 import transactions from './transactions.json';
 
 
@@ -31,9 +29,6 @@ export default function App() {
     <StaticticsList items={data} /> 
     </StatisticsSection>
 
-    <TransactionHistorySection>
-      <TransactionHistoryList items={transactions} />
-    </TransactionHistorySection>
-
+    <TransactionHistory items={transactions} />
   </div>
   )};

@@ -1,33 +1,35 @@
 import PropTypes from "prop-types";
-import transactions from "../transactions.json";
+import { Table, Strings } from '../TransactionHistory.styled';
 
-export default function TransactionHistory(props) {
-    return (
-        <table className="transaction-history">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
-    </tr>
-  </thead>
-  
-      {transactions.map(transaction => (
-    <tbody>
+const TransactionHistory = ({ items }) => (
+    <Table>
+      <thead>
         <tr>
-            <td>{transaction.type}</td>
-            <td>{transaction.amount}</td>
-            <td>{transaction.currency}</td>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
         </tr>
-    </tbody>))}
-</table>
-      )}
-
-      TransactionHistory.protoType = {
-        type: PropTypes.string,
-        amount: PropTypes.number,
-        currency: PropTypes.string,
-      }
-
-//     <TransactionHistory key={transaction.id} type={transaction.type}
-// amount={transaction.amount} currency={transaction.currency} />
+      </thead>
+  
+      <Strings>
+        {items.map(({ id, type, amount, currency }) => (
+          <tr key={id}>
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
+          </tr>
+        ))}
+      </Strings>
+    </Table>
+  );
+  
+  TransactionHistory.propTypes = {
+    item: PropTypes.exact({
+      id: PropTypes.string,
+      type: PropTypes.string,
+      amount: PropTypes.string,
+      currency: PropTypes.string,
+    }),
+  };
+  
+  export default TransactionHistory;

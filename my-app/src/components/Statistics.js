@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
 import data from '../data.json';
+import { Item, Data } from '../statistics.styled';
 
 export default function Statistics(props) {
   return (
       data.map(datas => (
-    <li className="item">
-      <span className="label">{datas.labal}</span>
-      <span className="percentage">{datas.percentage}</span>
-    </li>))
+    <Item key={datas.id}>
+      <Data>{datas.label} - </Data>
+      <Data>{datas.percentage}</Data>
+    </Item>))
      )};
 
     Statistics.propTypes = {

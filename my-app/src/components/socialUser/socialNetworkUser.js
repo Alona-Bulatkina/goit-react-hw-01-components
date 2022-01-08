@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
-import { Container, UserName, Image, Description, Stats, StatsLi, StatsQuantity } from '../socialNetworkUser.styled';
+import { Container, UserName, Image, Description, Stats, StatsLi, StatsQuantity } from './socialNetworkUser.styled';
 
 
 export default function SocialNetworkUser(props) {
-    const { src, username, tag, location, followers, views, likes } = props;
+    const { avatar, username, tag, location, stats } = props;
     return (
 <Container>
       <div>
         <Image
-          src={src}
+          src={avatar}
           alt="User avatar" 
           className="avatar"
           width="150"
@@ -21,26 +21,24 @@ export default function SocialNetworkUser(props) {
       <Stats>
         <StatsLi>
           <span className="label">Followers: </span>
-          <StatsQuantity>{followers}</StatsQuantity>
+          <StatsQuantity>{stats.followers}</StatsQuantity>
         </StatsLi>
         <StatsLi>
           <span className="label">Views: </span>
-          <StatsQuantity>{views}</StatsQuantity>
+          <StatsQuantity>{stats.views}</StatsQuantity>
         </StatsLi>
         <StatsLi>
           <span className="label">Likes: </span>
-          <StatsQuantity>{likes}</StatsQuantity>
+          <StatsQuantity>{stats.likes}</StatsQuantity>
         </StatsLi>
       </Stats>
   </Container>
     )};
 
     SocialNetworkUser.propTypes = {
-      src: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
       username: PropTypes.string.isRequired,
       tag: PropTypes.string.isRequired,
       location: PropTypes.string.isRequired,
-      followers: PropTypes.number.isRequired,
-      views: PropTypes.number.isRequired,
-      likes: PropTypes.number.isRequired,
+      stats: PropTypes.object.isRequired,
     };

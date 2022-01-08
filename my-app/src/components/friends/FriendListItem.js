@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import friendsData from '../friends.json';
-import { Item, Status, Avatar, Name } from '../FriendListItem.styled';
+import friendsData from '../../data/friends.json';
+import { Item, Status, Avatar, Name } from '../friends/FriendListItem.styled';
 
 export default function FriendListItem({ isOnline, avatar, name }) {
 

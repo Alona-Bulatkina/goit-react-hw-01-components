@@ -1,12 +1,12 @@
-import SocialNetworkUser from './components/socialNetworkUser';
-import dataSocialUser from './user.json';
-import FriendList from './components/FriendList';
-import friendsData from './friends.json';
-import StaticticsList from './components/StaticticsList';
-import StatisticsSection from './components/StatisticsSection';
-import data from './data.json';
-import TransactionHistory from './components/TransactionHistory';
-import transactions from './transactions.json';
+import SocialNetworkUser from './components/socialUser/socialNetworkUser';
+import dataSocialUser from './data/user.json';
+import FriendList from './components/friends/FriendList';
+import friendsData from './data/friends.json';
+import StaticticsList from './components/statictics/StaticticsList';
+import StatisticsSection from './components/statictics/StatisticsSection';
+import data from './data/data.json';
+import TransactionHistory from './components/transaction/TransactionHistory';
+import transactions from './data/transactions.json';
 
 
 export default function App() {
@@ -14,13 +14,11 @@ export default function App() {
   <div>
 
     <SocialNetworkUser 
-      src={dataSocialUser.avatar} 
+      avatar={dataSocialUser.avatar} 
       username={dataSocialUser.username} 
       tag={dataSocialUser.tag} 
       location={dataSocialUser.location} 
-      followers={dataSocialUser.stats.followers} 
-      views={dataSocialUser.stats.views} 
-      likes={dataSocialUser.stats.likes} 
+      stats={dataSocialUser.stats} 
     />
 
     <FriendList items={friendsData} />

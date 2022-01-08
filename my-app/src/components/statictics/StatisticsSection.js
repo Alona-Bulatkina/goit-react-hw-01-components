@@ -9,4 +9,5 @@ export default function StatisticsSection({ title, children }) {
 }
 StatisticsSection.propTypes = {
     title: PropTypes.string,
+    children: PropTypes.node,
 }

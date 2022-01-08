@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import data from '../data.json';
-import { Item, Data } from '../statistics.styled';
+import data from '../../data/data.json';
+import { Item, Data } from '../statictics/statistics.styled';
 
 export default function Statistics(props) {
   return (
